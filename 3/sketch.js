@@ -2,12 +2,26 @@
 //       wrap around
 //       bounce
 
+let x;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(20);
-  for (let x = 0; x < width; x += 2) {
-    ellipse(x, height / 2, 100);
-  }
+x = 0;
+
 }
 
-function draw() {}
+function draw() {
+  background(20); //so that the background is drawn every refresh, masks out the frames
+  
+//draw stuff
+let xpos = 10 * frameCount;
+ellipse(xpos % width, height / 2, 100);
+
+//update some parameter
+x = x + 10;
+
+// //check if need to reset x
+// if (x > width) {
+//   x = 0;
+// }
+}

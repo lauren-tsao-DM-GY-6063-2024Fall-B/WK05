@@ -2,9 +2,18 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(20);
 }
 
 function draw() {
-  ellipse(width / 2, height / 2, 20);
+  background(20);
+
+  let P = 3000; // P = period (higher the period, the slower the growth) (3000 = 3s)
+let counter = millis() % P;
+let md = map(counter, 0 , P, 20, 300); //md = my diameter
+let mr = map(counter,0, P, 100, 255); //mr = my red
+
+fill(mr, 50, 50)
+
+  ellipse(width / 2, height / 2, md);
+  
 }
